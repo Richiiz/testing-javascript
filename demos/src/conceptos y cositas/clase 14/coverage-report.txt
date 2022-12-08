@@ -1,0 +1,9 @@
+REPORTE DE COBERTURA
+es una medida procentual que evalua el grado de codigo que se ha probado.
+no significa que el 100% de covertura es igual a no tener errores.
+No basta con hacer un solo escenario para probar nuestro codigo. Necesitaria mas.
+Nos da un equilibrio para hacer pruebas innecesarias.
+(mirar imagen covertura :D)
+Tambien es usada como tecnica para eliminar codigo que nunca va a ser ejecutado, como por ejemplo,
+librerias de las que solamente estamos usando un pequeño porcentaje no conviene tenerla instalada.
+

@@ -1,0 +1,5 @@
+Dummy: Son datos ficticios para llenar información.
+Fake: simulan un objeto o datos reales y sirve para suplantar comportamientos
+Stubs: proveen respuestas preparadas y se pueden llamar durante un test para simular un comportamientos.
+Spies: lo mismo que los Stubs pero estos pueden recolectar informacion de como fue llamado.
+Smocks: subs + spies, a veces pueden estar pre-programados

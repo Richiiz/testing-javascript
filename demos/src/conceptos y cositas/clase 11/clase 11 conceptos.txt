@@ -1,0 +1,62 @@
+TIPOS DE PRUEBAS
+Fases:
+-requirimientos
+-diseño / Arq
+-Desarrollo
+-QA (pruebas)
+-produccion
+entre mas avanzada este la fase, la prueba y hallar el problema puede ser mas tardado y costoso
+
+todo va de la mano con pruebas automaticas y manuales, va ligado con herramientas de pruebas
+
+SUT (Systema Under Test)
+el sujeto de prueba
+
+VALIDA
+se contesta la pregunta de si ¿Estamos construyendo el sistema correcto?
+normalmente hacia una capa de negocio, si eso que se solicita es lo que realmente quiere, o le da valor
+
+
+VERIFICAR
+¿Estamos construyendo el sistema correctamente?
+obviando que lo que se esta verificando ya produce un valor para el usuario
+
+REQUERIMIENTOS
+SUT: Requerimientos
+Ejecucion: manuales
+Objetivo: validar
+Herramientas: Inspección
+
+DISEÑO / ARQUITECTURA
+SUT: Sistema
+Ejecucion: manuales / automaticas
+Objetivo: verificar
+Herramientas: Case tools
+
+DESARROLLO / IMPLEMENTACION
+SUT: Dependencias
+Ejecucion: automatizacion
+Objetivo: verificar
+Herramientas: pruebas estaticas
+
+QUIEN ESCRIBE EL TEST?
+si escribes el codigo tienes que escribir el unit test :D
+
+Pruebas Funcionales
+Son las que validan que se cumplan los requerimientos de valor para el cliente (como guardar bien los buenos datos de un usuario);
+hasta este punto es lo que hemos hecho en VS code. Por norma general, las pruebas unitarias las entrega el desarrollador,
+el tester se empieza a involucrar en las pruebas de integración o E2E.
+
+Pruebas No Funcionales
+Verifican más el óptimo manejo de los recursos del software, no el cumplimiento de requisitos persé, como lo son pruebas de:
++rendimiento
++carga o estabilidad
++estrés
++usabilidad
++seguridad.
+Estas pruebas no necesariamente deben estar desde el principio.
+
+.
+NOTA: HAy una nueva área de pruebas No Funcionales que se llama 🐒 Ingeniería del caos, 🐒 su pionero es Netflix.
+Consiste en desconectar servicios en producción, como por ejemplo, desconectar una BD para ver como reacciona el equipo
+y establecer soluciones.

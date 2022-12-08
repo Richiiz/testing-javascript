@@ -1,0 +1,42 @@
+METODOLOGÍAS
+TDD (Test Driven Development):
+Desarrollo guiado por pruebas, donde primero se hacen las pruebas antes de escribir el código (primero los expects).
+(mirar imagen TDD :D)
+
+
+BDD (Behavior Driven Development):
+Desarrollo guiado por comportamiento de acuerdo a los requisitos y luego las pruebas.
+Normalmente no hacemos pruebas con casos hipoteticos, si no que mas bien, con casos reales de usuarios basados en comportamientos.
+(mirar imagen bDD ;D)
+
+
+METODOLOGÍAS PARA ESCRIBIR PRUEBAS
+AAA “Mantra” para hacer pruebas
+
+_____ preparar Arrange | Given dado algo
+_________ ejecutar Act | When cuando
+resolver hipótesis Assert | Then entonces
+(mirar el archivo ejemplo.test.js  :O)
+
+FALSO POSITIVO
+una prueba que indica un error cuando en realidad esta bien
+suele ocurrir cuando nuestra ejecucion es correcta pero nuestro caso de pruebas lo pusimos mal.
+esteando el método suma de 1 + 1 y pongo el expect en 5, es un falso positivo, luego la prueba está mal.
+
+FALSO NEGATIVO
+indica que todo es correcto cuando realmente esta mal.
+Son más comunes, ya que parece que todo está normal, pero no se ha identificado el error, el set de pruebas debería ser más amplio;
+esto sucede cuando caemos en tan solo, probar el Happy Path, probar las condiciones en las que sabemos que el sistema funciona,
+por ejemplo, en el SUT de dividir las primeras pruebas salían bien porque no se tomó en cuenta la división entre cero 0
+luego se hizo la prueba y el refactor
+En estos casos lo mejor es aplicar TDD
+
+SISTEMA LEGACY
+Sistema Legacy
+Son sistemas que te piden agregar pruebas a algo funcional, incluso en paralelo; hay que refactorizar los métodos
+enormes a pequeños para hacer unit test de pocos a muchos métodos; legacy no lleva una buena arquitectura.
+
+Clean Architecture
+Este patrón lleva buenas prácticas desde el principio, cada método está bien dividido y con responsabilidades
+acertadas, es mucho más facil de agregar el set de pruebas.
+(mirar la imagen the clean architecture :/)

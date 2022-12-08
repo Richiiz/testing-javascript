@@ -1,0 +1,13 @@
+Pruebas unitarias
+Aisladas
+Se enfocan en probar una unidad en especifico, y lo que dependa de esta se comienza a considerar doble.
+en las pruebas las dependencias se reemplazan por algo que emule el comportmaiento de esa dependencia.
+se les conoce también como pruebas de estado o de caja negra, ya que solo importan las entradas y las salidas
+Las pruebas de caja blanca se hacen pruebas e internamnete se espera que los procesos se hagan correctamente
+(mirar imagen prueba unitaria :D)
+
+¿QUE ES UNA UNIDAD?
+Una unidad puede ser una función o un método o una clase, depende del paradigma usado en desarrollo (funcional o POO);
+una unidad debe tener solo una responsabilidad en específico.
+
+la utilidad imprptante es el Cover Report, que nos dice la prueba, que tanto esta cubriendo del codigo.
