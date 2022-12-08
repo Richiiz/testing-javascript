@@ -10,19 +10,27 @@ const FakeBooks = [
   },
 ];
 
+// se crea una constante para una prueba de comportamiento, mejor conocida como espia
+const mockGetAll = jest.fn();
+
 // este es una variable stub que es reemplazada por la libreria original.
 // prepara una respuesta predefinida que viene de una variable Fake
 // cuando se usa una suplantacion se tiene que suplantar todo el comportamiento, en este caso
 // son dos getAll y create
 const MongoLibStub = {
-  getAll: () => [...FakeBooks],
+  // getAll: () => [...FakeBooks],
+  // ahor getAll es igual a la constante espia osea, mockGetAll
+  getAll: mockGetAll,
   create: () => {},
 };
 
 // cuando estamos utuilizando una dependencia (en este caso MongoLib del archivo books.service.js),
 // la usamos a partir de la importacion.
 // cuando se llame a la libreria, se genera una suplantacion con respuestas preparadas
-jest.mock('../lib/mongo.lib', () => jest.fn().mockImplementation(() => MongoLibStub));
+jest.mock('../lib/mongo.lib', () => jest.fn().mockImplementation(() => ({
+  getAll: mockGetAll,
+  create: () => {},
+})));
 
 describe('Test for BooksServices', () => {
   // se crea una variable editable llamada service
@@ -39,6 +47,8 @@ describe('Test for BooksServices', () => {
   describe('test for getbooks', () => {
     test('should return a list book', async () => {
       // Arrange
+      // se ponen los libros dentro del metodo para poder espiar como es que vienen
+      mockGetAll.mockResolvedValue(FakeBooks);
 
       // creamos una constante donde va a guardar el metodo getBooks de la variable editable
       // service,ponemos async ya que es un metodo asincrono
@@ -47,6 +57,28 @@ describe('Test for BooksServices', () => {
       console.log(books);
       // Assert
       expect(books.length).toEqual(1);
+      // pregunta si la variable espia fue llamada
+      expect(mockGetAll).toHaveBeenCalled();
+      // pregunta si la variable espia fue llamada tantas veces
+      expect(mockGetAll).toHaveBeenCalledTimes(1);
+      // pregunta si la variable espia fue llamada con ciertos argumentos
+      expect(mockGetAll).toHaveBeenCalledWith('books', {});
+    });
+    test('should return a list book', async () => {
+      // Arrange
+      // se comprueba con un array hecho en otro caso
+      mockGetAll.mockResolvedValue([{
+        _id: 1,
+        name: 'El principito 2',
+      }]);
+
+      // act
+      const books = await service.getBooks({});
+      console.log(books);
+      // Assert
+      // comprobamos si dentro del array, nuestro elemento en la posicion 0
+      // fue llamado correctamente el nombre del libro.
+      expect(books[0].name).toEqual('El principito 2');
     });
   });
 });
