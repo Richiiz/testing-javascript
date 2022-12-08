@@ -31,6 +31,9 @@ describe('Test for BooksServices', () => {
     // en la varibale editable le metemos la constante BooksServices que viene
     // del archivo que requerimos
     service = new BooksServices();
+    // la siguiente linea de codigo limpia todos los mocks que se hayan hecho ANTES de cada prueba
+    // esto es asi ya que esta dentro del beforeEach.
+    jest.clearAllMocks();
   });
 
   describe('test for getbooks', () => {
