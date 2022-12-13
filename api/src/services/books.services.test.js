@@ -19,12 +19,11 @@ const mockGetAll = jest.fn();
 // prepara una respuesta predefinida que viene de una variable Fake
 // cuando se usa una suplantacion se tiene que suplantar todo el comportamiento, en este caso
 // son dos getAll y create
-const MongoLibStub = {
-  // getAll: () => [...FakeBooks],
-  // ahor getAll es igual a la constante espia osea, mockGetAll
-  getAll: mockGetAll,
-  create: () => {},
-};
+// const MongoLibStub = {
+// getAll: () => [...FakeBooks], // ahor getAll es igual a la constante espia osea, mockGetAll
+//   getAll: mockGetAll,
+//   create: () => {},
+// };
 
 // cuando estamos utuilizando una dependencia (en este caso MongoLib del archivo books.service.js),
 // la usamos a partir de la importacion.
