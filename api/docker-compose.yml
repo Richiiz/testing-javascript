@@ -8,3 +8,4 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: root123
     ports:
       - 27017:27017
+
