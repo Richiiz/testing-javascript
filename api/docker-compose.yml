@@ -8,4 +8,11 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: root123
     ports:
       - 27017:27017
-
+# creamos una base de datos de pruebas
+  mongo-e2e:
+    image: mongo:4.4
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: test
+      MONGO_INITDB_ROOT_PASSWORD: test123
+    ports:
+      - 27017:27017
